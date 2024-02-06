@@ -1,0 +1,71 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             DelayA, CODE, READONLY 
+                                                            ; declare code area
+                                                            
+    2 00000000                 ENTRY
+    3 00000000                 EXPORT           Delay       ; make delay functi
+                                                            on visible to main(
+                                                            )
+    4 00000000         
+    5 00000000 4802    Delay   LDR              r0, =0x1B7740
+    6 00000002         
+    7 00000002         LOOP
+    8 00000002 1E40            SUBS             r0,r0,#1
+    9 00000004 2800            CMP              r0,#0
+   10 00000006 D000            BEQ              LOOPEND
+   11 00000008 E7FB            B                LOOP
+   12 0000000A         
+   13 0000000A 4770    LOOPEND BX               lr
+   14 0000000C                 END
+              001B7740 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
+work --depend=.\objects\delay_par.d -o.\objects\delay_par.o -I.\RTE\Device\MKL4
+6Z256VLL4 -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\In
+clude -IC:\Keil_v5\ARM\PACK\NXP\MKL46Z4_DFP\10.0.3 --predefine="__EVAL SETA 1" 
+--predefine="__UVISION_VERSION SETA 526" --predefine="_RTE_ SETA 1" --predefine
+="CPU_MKL46Z256VLL4 SETA 1" --list=.\listings\delay_par.lst Delay_par.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Delay 00000000
+
+Symbol: Delay
+   Definitions
+      At line 5 in file Delay_par.s
+   Uses
+      At line 3 in file Delay_par.s
+Comment: Delay used once
+DelayA 00000000
+
+Symbol: DelayA
+   Definitions
+      At line 1 in file Delay_par.s
+   Uses
+      None
+Comment: DelayA unused
+LOOP 00000002
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file Delay_par.s
+   Uses
+      At line 11 in file Delay_par.s
+Comment: LOOP used once
+LOOPEND 0000000A
+
+Symbol: LOOPEND
+   Definitions
+      At line 13 in file Delay_par.s
+   Uses
+      At line 10 in file Delay_par.s
+Comment: LOOPEND used once
+4 symbols
+340 symbols in table

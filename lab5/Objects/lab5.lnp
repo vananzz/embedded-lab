@@ -1,0 +1,6 @@
+--cpu Cortex-M0+ --scatter "./RTE/Device/MKL46Z256VLL4/MKL46Z256xxx4_flash.scf"
+".\objects\exercise01.o"
+--strict --scatter ".\Objects\lab5.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\lab5.map" -o .\Objects\lab5.axf

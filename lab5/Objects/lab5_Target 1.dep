@@ -1,0 +1,2 @@
+Dependencies for Project 'lab5', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Exercise01.s)(0x659D3941)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\NXP\MKL46Z4_DFP\10.0.3-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "CPU_MKL46Z256VLL4 SETA 1"--list .\listings\exercise01.lst --xref --length 49 --width 120 -o .\objects\exercise01.o --depend .\objects\exercise01.d)

@@ -1,0 +1,5 @@
+Load "c:\\Users\\An-laptop\\code\\embeded\\lab7\\Objects\\lab7.axf" 
+_____^
+*** error 56: cannot open file
+Error: Flash Download failed  -  Could not load file 'c:\Users\An-laptop\code\embeded\lab7\Objects\lab7.axf'
+Flash Load finished at 16:07:17

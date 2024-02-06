@@ -1,0 +1,371 @@
+
+
+
+ARM Macro Assembler    Page 1 Exercise 01
+
+
+    1 00000000                 TTL              Exercise 01
+    2 00000000         ;***************************************************************
+    3 00000000         ;This program loads four constants from ROM.
+    4 00000000         ;and store them in variables in RAM
+    5 00000000         ;Name:  <Your name here>
+    6 00000000         ;Date:  <Date completed here>
+    7 00000000         ;Class:  ELT-3240
+    8 00000000         ;Section:  <Your lab section, day, and time here>
+    9 00000000         ;---------------------------------------------------------------
+   10 00000000         ;Template:  Hung K. Nguyen
+   11 00000000         ;           September 19, 2019
+   12 00000000         ;***************************************************************
+   13 00000000         ;Assembler directives
+   14 00000000                 THUMB
+   15 00000000         ; Memory
+   16 00000000 00000100 
+                       SSTACK_SIZE
+                               EQU              0x00000100  ;Used by MKL46Z4.s
+   17 00000000         ; NVIC
+   18 00000000 E000E180 
+                       ICER    EQU              0xE000E180
+   19 00000000         ;**********************************************************************
+   20 00000000         ;Vector Table Mapped to Address 0 at Reset
+   21 00000000         ;Linker requires __Vectors to be exported
+   22 00000000                 AREA             RESET, DATA, READONLY
+   23 00000000                 EXPORT           __Vectors
+   24 00000000         __Vectors
+   25 00000000 00000000        DCD              SP_INIT     ;00: stack pointer value when stack is empty
+   26 00000004 00000000        DCD              Reset_Handler ;01:reset vector
+   27 00000008                 ALIGN
+   28 00000008         ;**********************************************************************
+   29 00000008         ;Program
+   30 00000008         ;Linker requires Reset_Handler
+   31 00000008                 AREA             MyCode,CODE,READONLY
+   32 00000000                 ENTRY
+   33 00000000                 EXPORT           Reset_Handler
+   34 00000000         Reset_Handler
+   35 00000000         Main
+   36 00000000         ;---------------------------------------------------------------
+   37 00000000         ;begin program code
+   38 00000000         ;Disable interrupts
+   39 00000000 4809            LDR              R0, =ICER   ; R0 = &ICER
+
+
+
+ARM Macro Assembler    Page 2 Exercise 01
+
+
+   40 00000002 2100            MOVS             R1,#0       ;r1 = 0
+   41 00000004 43C9            MVNS             R1,R1       ;R1= 0xFFFFFFFF
+   42 00000006 6001            STR              R1, [R0,#0] ; ICER = 0xFFFFFFFF
+   43 00000008         ;Initialize stack pointer
+   44 00000008 4808            LDR              R0, =SP_INIT
+   45 0000000A 4685            MOV              SP,R0
+   46 0000000C         ;---------------------------------------------------------------
+   47 0000000C         ;>>>>> begin your main program code <<<<<
+   48 0000000C         MainLoop                             ; do {
+   49 0000000C BF00            NOP                          ; No operation
+   50 0000000E 4A08            LDR              R2, =ConstData ; CPtr = &ConstData
+   51 00000010 2302            MOVS             R3, #0x02   ; Counter = 2
+   52 00000012         LOOP                                 ; Repeat {
+   53 00000012 6811            LDR              R1, [R2, #0] ; R1 = CPtr[0]
+   54 00000014 4807            LDR              R0, =VarData ; VPtr = &VarData[0]
+   55 00000016 6001            STR              R1, [R0, #0] ; VPtr[0] = CPtr[0]
+   56 00000018 6851            LDR              R1, [R2,#4] ; R1 = CPtr[1]
+   57 0000001A 6041            STR              R1, [R0, #4] ; VPtr[1] = CPtr[1]  
+   58 0000001C 3208            ADDS             R2, #8      ; CPTR = &(CPTR[2])
+   59 0000001E 3B01            SUBS             R3, #1      ; Counter--
+   60 00000020 D1F7            BNE              LOOP        ; } While (Counter != 0)
+   61 00000022 BF00            NOP                          ; No operation
+   62 00000024         ;>>>>>   end your main program code <<<<<
+   63 00000024         ;Stay here
+   64 00000024 E7F2            B                MainLoop    ; } Forever
+   65 00000026         ;---------------------------------------------------------------
+   66 00000026         ;>>>>> begin subroutine code <<<<<
+   67 00000026         ;>>>>>   end subroutine code <<<<< 
+   68 00000026         ;end program code
+   69 00000026 00 00           ALIGN
+   70 00000028         ;***************************************************************
+   71 00000028 E000E180 
+              00000000 
+              00000000 
+              00000000         AREA             MyConst, DATA, READONLY
+   72 00000000         ; Place Constant data here
+   73 00000000 0000000A 
+              0000000B 
+              00000010 
+              0000000A ConstData
+                               DCD              0x0000000A, 0x0000000B, 0x00000010, 10
+   74 00000010                 ALIGN
+
+
+
+ARM Macro Assembler    Page 3 Exercise 01
+
+
+   75 00000010         ;***************************************************************
+   76 00000010                 AREA             RAM, DATA, READWRITE
+   77 00000000         ; Place Constant data here
+   78 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+
+
+
+ARM Macro Assembler    Page 4 Exercise 01
+
+
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+
+
+
+ARM Macro Assembler    Page 5 Exercise 01
+
+
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00       SSTACK  SPACE            SSTACK_SIZE
+   79 00000100         SP_INIT
+   80 00000100         ;Place variable data here
+   81 00000100 00 00 00 
+              00 00 00 
+              00 00    VarData SPACE            8
+   82 00000108                 END
+Command Line: --debug --xref --length=49 --width=120 --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=interwork --depend=.\o
+bjects\exercise01.d -o.\objects\exercise01.o -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\NXP\MKL46Z4_DFP\10.0.3 -IC:\Keil_v5
+\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 526" --predefine="CPU_MKL46Z256VLL4 S
+ETA 1" --list=.\listings\exercise01.lst Exercise01.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 22 in file Exercise01.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 24 in file Exercise01.s
+   Uses
+      At line 23 in file Exercise01.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 00000012
+
+Symbol: LOOP
+   Definitions
+      At line 52 in file Exercise01.s
+   Uses
+      At line 60 in file Exercise01.s
+Comment: LOOP used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 35 in file Exercise01.s
+   Uses
+      None
+Comment: Main unused
+MainLoop 0000000C
+
+Symbol: MainLoop
+   Definitions
+      At line 48 in file Exercise01.s
+   Uses
+      At line 64 in file Exercise01.s
+Comment: MainLoop used once
+MyCode 00000000
+
+Symbol: MyCode
+   Definitions
+      At line 31 in file Exercise01.s
+   Uses
+      None
+Comment: MyCode unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 34 in file Exercise01.s
+   Uses
+      At line 26 in file Exercise01.s
+      At line 33 in file Exercise01.s
+
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ConstData 00000000
+
+Symbol: ConstData
+   Definitions
+      At line 73 in file Exercise01.s
+   Uses
+      At line 50 in file Exercise01.s
+Comment: ConstData used once
+MyConst 00000000
+
+Symbol: MyConst
+   Definitions
+      At line 71 in file Exercise01.s
+   Uses
+      None
+Comment: MyConst unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RAM 00000000
+
+Symbol: RAM
+   Definitions
+      At line 76 in file Exercise01.s
+   Uses
+      None
+Comment: RAM unused
+SP_INIT 00000100
+
+Symbol: SP_INIT
+   Definitions
+      At line 79 in file Exercise01.s
+   Uses
+      At line 25 in file Exercise01.s
+      At line 44 in file Exercise01.s
+
+SSTACK 00000000
+
+Symbol: SSTACK
+   Definitions
+      At line 78 in file Exercise01.s
+   Uses
+      None
+Comment: SSTACK unused
+VarData 00000100
+
+Symbol: VarData
+   Definitions
+      At line 81 in file Exercise01.s
+   Uses
+      At line 54 in file Exercise01.s
+Comment: VarData used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+ICER E000E180
+
+Symbol: ICER
+   Definitions
+      At line 18 in file Exercise01.s
+   Uses
+      At line 39 in file Exercise01.s
+Comment: ICER used once
+SSTACK_SIZE 00000100
+
+Symbol: SSTACK_SIZE
+   Definitions
+      At line 16 in file Exercise01.s
+   Uses
+      At line 78 in file Exercise01.s
+Comment: SSTACK_SIZE used once
+2 symbols
+350 symbols in table
