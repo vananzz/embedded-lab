@@ -4,15 +4,15 @@
 ARM Macro Assembler    Page 1 
 
 
-    1 00000000                 AREA             DelayA, CODE, READONLY 
+    1 00000000                 AREA             DelayAa, CODE, READONLY 
                                                             ; declare code area
                                                             
     2 00000000                 ENTRY
-    3 00000000                 EXPORT           Delay       ; make delay functi
+    3 00000000                 EXPORT           Delayaa     ; make delay functi
                                                             on visible to main(
                                                             )
     4 00000000         
-    5 00000000 4802    Delay   LDR              r0, =0x1B7740
+    5 00000000 4802    Delayaa LDR              r0, =0x1B7740
     6 00000002         
     7 00000002         LOOP
     8 00000002 1E40            SUBS             r0,r0,#1
@@ -35,22 +35,22 @@ L46Z256VLL4 SETA 1" --list=.\listings\delay.lst Delay.s
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-Delay 00000000
+DelayAa 00000000
 
-Symbol: Delay
-   Definitions
-      At line 5 in file Delay.s
-   Uses
-      At line 3 in file Delay.s
-Comment: Delay used once
-DelayA 00000000
-
-Symbol: DelayA
+Symbol: DelayAa
    Definitions
       At line 1 in file Delay.s
    Uses
       None
-Comment: DelayA unused
+Comment: DelayAa unused
+Delayaa 00000000
+
+Symbol: Delayaa
+   Definitions
+      At line 5 in file Delay.s
+   Uses
+      At line 3 in file Delay.s
+Comment: Delayaa used once
 LOOP 00000002
 
 Symbol: LOOP

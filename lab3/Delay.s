@@ -1,8 +1,8 @@
-		AREA DelayA, CODE, READONLY ; declare code area
+		AREA DelayAa, CODE, READONLY ; declare code area
 		ENTRY
-		EXPORT Delay ; make delay function visible to main()
+		EXPORT Delayaa ; make delay function visible to main()
 
-Delay 	LDR r0, =0x1B7740
+Delayaa 	LDR r0, =0x1B7740
 
 LOOP 	
 		SUBS r0,r0,#1

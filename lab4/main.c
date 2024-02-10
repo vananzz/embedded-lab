@@ -48,8 +48,8 @@ int main()
 		if (TPM0->SC & MASK(7)) {
 			toggleLed();
 			TPM0->SC &= ~MASK(7);
-			//SysTick_Configuration(SystemCoreClock);
-			//SysTick->VAL = 0;
+			SysTick_Configuration(SystemCoreClock);
+			SysTick->VAL = 0;
 		} /* if COUNT flag is set */
 	}
 }

@@ -1,71 +1,128 @@
 #include "MKL46Z4.h"
 #include "Seg_LCD.h"
-void init_I2C0();
-void init_MAG3110();
-void delayMs(int n);
-void write(int reg, int data);
-int read(int reg);
-void waitACK();
+#include "I2C.h"
+#include "mag.h"
+
+void my_mag_calib(int* xoff, int* yoff, int* zoff);
 
 int main() {
 	SystemClockConfiguration();
   SegLCD_Init();
-	init_I2C0();
-	init_MAG3110();
+	//InitI2C();
+	mag_init();
+	//init_I2C0();
+	//init_MAG3110();
 
-	
-	int result;
-
+	int *x_off, *y_off, * z_off;
+	//SegLCD_DisplayDecimal(9999);
+	//for (int i = 0; i < 3000000; i ++);
+	//my_mag_calib(x_off, y_off, z_off);
+	//SegLCD_DisplayDecimal(0000);
+	//for (int i = 0; i < 3000000; i ++);
+	int x, y, z;
 	while (1) {
-		write(0x11, 1);
-		//I2C0->C1 |= I2C_C1_MST(1);
-		//I2C0->D = (0x0E << 1) | 1;
-		//waitACK();
+		x = mag_read(0x01);
+		//x |= mag_read(0x02);
 		
-		SegLCD_DisplayDecimal(1000);
+		y = mag_read(0x03);
+		//y |= mag_read(0x04);
+
+		z = mag_read(0x05);
+		//z |= mag_read(0x6);
+		//SegLCD_DisplayDecimal(sqrt(x*x+y*y+z*z));
+		SegLCD_DisplayDecimal(x); 
 	}
 
 	return 1;
 }
 
-void write(int reg, int data){
-	I2C0->C1 |= I2C_C1_MST(1);
-	I2C0->D = (0x0E << 1) | 1;
-	waitACK();
-	//I2C0->D = reg;
-	//waitACK();
-	//I2C0->D = 1;
-	//waitACK();
-	//I2C0->C1 &= ~I2C_C1_MST(1);
-}
+void my_mag_calib(int* xoff, int* yoff, int* zoff){
+	short Xout_16_bit_avg, Yout_16_bit_avg, Zout_16_bit_avg;  
+	short Xout_16_bit_max, Yout_16_bit_max, Zout_16_bit_max;  
+	short Xout_16_bit_min, Yout_16_bit_min, Zout_16_bit_min;  
+	signed short xread, yread, zread;
+	short j=0;  
+	
+	SegLCD_DisplayDecimal(2000);
+	for (int i = 0; i < 3000000; i ++);
+	while (j < 500){ // Calibration process ~10s (200 samples * 1/20Hz)
+		SegLCD_DisplayDecimal(j);
+		if ((mag_read(0x00)&0xf) != 0){   
+	  
+				xread   = mag_read(0x01)<<8;
+				xread  |= mag_read(0x02);
 
-int read(int reg){
-	int data;
-	I2C0->C1 |= I2C_C1_MST(1);
-	I2C0->D = (0x0E << 1) | 1;
-	waitACK();
-	I2C0->D = reg;
-	waitACK();
-	I2C0->D = (0x0E << 1);
-	waitACK();
-	data = I2C0->D;
-	I2C0->C1 &= ~I2C_C1_MST(1);
-	return data;
-}
+				yread   = mag_read(0x03)<<8;
+				yread  |= mag_read(0x04);
 
-void waitACK(){
-	while ((I2C0->S & ~I2C_S_TCF_MASK) != 1);
-}
+				zread   = mag_read(0x05)<<8;
+				zread  |= mag_read(0x06);
+	  
+				if (j == 0)  
+				{  
+					Xout_16_bit_max = xread;  
+					Xout_16_bit_min = xread;  
+	  
+					Yout_16_bit_max = yread;  
+					Yout_16_bit_min = yread;  
+	  
+					Zout_16_bit_max = zread;  
+					Zout_16_bit_min = zread;  
+				}  
+	  
+				// Check to see if current sample is the maximum or minimum X-axis value  
+				if (xread > Xout_16_bit_max) {Xout_16_bit_max = xread;}  
+				if (xread < Xout_16_bit_min) {Xout_16_bit_min = xread;}  
+	  
+				// Check to see if current sample is the maximum or minimum Y-axis value  
+				if (yread > Yout_16_bit_max) {Yout_16_bit_max = yread;}  
+				if (yread < Yout_16_bit_min) {Yout_16_bit_min = yread;}  
+	  
+				// Check to see if current sample is the maximum or minimum Z-axis value  
+				if (zread > Zout_16_bit_max) {Zout_16_bit_max = zread;}  
+				if (zread < Zout_16_bit_min) {Zout_16_bit_min = zread;}  
+	  
+				j++;  
+			}  
+	}  
 
-void init_I2C0() {
-	SIM->SCGC4 |= SIM_SCGC4_I2C0(1);
-  I2C0->F |= I2C_F_MULT(1) | I2C_F_ICR(0x01);
-	I2C0->C1 |= I2C_C1_IICEN(1) | I2C_C1_MST(1) | I2C_C1_TXAK_MASK;
-	//I2C0->A1 |= 0x0E;
-}
+	SegLCD_DisplayDecimal(3000);
+	for (int i = 0; i < 3000000; i ++);
 
-void init_MAG3110() {
-	SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
-	PORTE->PCR[25] |= PORT_PCR_MUX(0x5);
-	PORTE->PCR[24] |= PORT_PCR_MUX(0x5);
+	Xout_16_bit_avg = (Xout_16_bit_max + Xout_16_bit_min) / 2;    // X-axis hard-iron offset  
+	Yout_16_bit_avg = (Yout_16_bit_max + Yout_16_bit_min) / 2;    // Y-axis hard-iron offset  
+	Zout_16_bit_avg = (Zout_16_bit_max + Zout_16_bit_min) / 2;    // Z-axis hard-iron offset  
+
+	SegLCD_DisplayDecimal(4000);
+	for (int i = 0; i < 3000000; i ++){};
+
+	SegLCD_DisplayDecimal(Xout_16_bit_avg);
+	for (int i = 0; i < 3000000; i ++){};
+
+	//*xoff = Xout_16_bit_avg;
+	//*yoff = Yout_16_bit_avg;
+	//*zoff = Zout_16_bit_avg;
+	
+	SegLCD_DisplayDecimal(5000);
+	for (int i = 0; i < 3000000; i ++);
+
+	// Left-shift by one as magnetometer offset registers are 15-bit only, left justified  
+	Xout_16_bit_avg <<= 1;  
+	Yout_16_bit_avg <<= 1;  
+	Zout_16_bit_avg <<= 1; 
+
+	SegLCD_DisplayDecimal(6000);
+	for (int i = 0; i < 3000000; i ++);
+	  
+	mag_set(MAG_CTRL_REG1, 0x00);  // Standby mode  
+	  
+	// Set Offset  
+	mag_set(OFF_X_LSB, (char)(Xout_16_bit_avg & 0xFF));  
+	mag_set(OFF_X_MSB, (char)((Xout_16_bit_avg >>8) & 0xFF));  
+	mag_set(OFF_Y_LSB, (char)(Yout_16_bit_avg & 0xFF));  
+	mag_set(OFF_Y_MSB, (char)((Yout_16_bit_avg >>8) & 0xFF));  
+	mag_set(OFF_Z_LSB, (char)(Zout_16_bit_avg & 0xFF));  
+	mag_set(OFF_Z_MSB, (char)((Zout_16_bit_avg >>8) & 0xFF));  
+	  
+	mag_set(MAG_CTRL_REG1, 0x01);  //  Active mode again  *****
 }

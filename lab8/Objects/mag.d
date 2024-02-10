@@ -1,0 +1,10 @@
+.\objects\mag.o: C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\mag.c
+.\objects\mag.o: C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\mag.h
+.\objects\mag.o: .\RTE\Device\MKL46Z256VLL4\MKL46Z4.h
+.\objects\mag.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h
+.\objects\mag.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mag.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\mag.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\mag.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\mag.o: .\RTE\Device\MKL46Z256VLL4\system_MKL46Z4.h
+.\objects\mag.o: C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\I2C.h

@@ -40,7 +40,7 @@ void init () {
 	#endif
 }
 
-void main() {
+int main() {
 	init();
 	while(1) {
 		PTD->PTOR |= 1ul<<5;
@@ -70,7 +70,9 @@ void main() {
 		if ((PTC->PDIR & (1<<12)) == 0) {
 			PTE->PTOR |= 0xFFF00000;
 		}
-		for (int i; i < 1000000; i++){};
+		//for (int i; i < 1000000; i++){};
 		#endif
 	}
+	
+	return 1;
 }

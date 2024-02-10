@@ -383,9 +383,29 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
+              <FileName>Seg_LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\lab7\Seg_LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\I2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>mag.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\mag.h</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\I2C.c</FilePath>
             </File>
             <File>
               <FileName>Seg_LCD.c</FileName>
@@ -393,9 +413,9 @@
               <FilePath>..\lab7\Seg_LCD.c</FilePath>
             </File>
             <File>
-              <FileName>Seg_LCD.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\lab7\Seg_LCD.h</FilePath>
+              <FileName>mag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\Users\minipc\Downloads\Compressed\drive-download-20240209T175935Z-001\mag.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -426,7 +446,7 @@
       </component>
     </components>
     <files>
-      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_flash.scf">
+      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_flash.scf" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z256xxx4_flash.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -434,7 +454,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_ram.scf">
+      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_ram.scf" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z256xxx4_ram.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -442,7 +462,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="MKL46Z4.h">
+      <file attr="config" category="header" name="MKL46Z4.h" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z4.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -450,7 +470,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="MKL46Z4_features.h">
+      <file attr="config" category="header" name="MKL46Z4_features.h" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z4_features.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -458,7 +478,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="fsl_device_registers.h">
+      <file attr="config" category="header" name="fsl_device_registers.h" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\fsl_device_registers.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -466,7 +486,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceAsm" condition="mdk" name="arm\startup_MKL46Z4.s">
+      <file attr="config" category="sourceAsm" condition="mdk" name="arm\startup_MKL46Z4.s" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\startup_MKL46Z4.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -474,7 +494,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" name="system_MKL46Z4.c">
+      <file attr="config" category="sourceC" name="system_MKL46Z4.c" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\system_MKL46Z4.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
@@ -482,7 +502,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="system_MKL46Z4.h">
+      <file attr="config" category="header" name="system_MKL46Z4.h" version="1.0.0">
         <instance index="0">RTE\Device\MKL46Z256VLL4\system_MKL46Z4.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
         <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
