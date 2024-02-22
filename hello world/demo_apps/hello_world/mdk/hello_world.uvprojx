@@ -1,37 +1,44 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+
   <SchemaVersion>2.1</SchemaVersion>
+
   <Header>### uVision Project, (C) Keil Software</Header>
+
   <Targets>
     <Target>
       <TargetName>hello_world debug</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>MKL46Z256VLL4</Device>
           <Vendor>NXP</Vendor>
+          <PackID>NXP.MKL46Z4_DFP.10.0.3</PackID>
+          <PackURL>http://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
           <Cpu>CPUTYPE("Cortex-M0+")</Cpu>
-          <FlashUtilSpec/>
+          <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"STARTUP\Freescale\Kinetis\startup_MKL46Z4.s" ("Freescale MKL46Zxxxxxx4 Startup Code")</StartupFile>
           <FlashDriverDll>UL2CM3(-O2510 -S0 -C0 -FO15 -FD20000000 -FC800 -FN1 -FF0MK_P256_48MHZ -FS00 -FL040000)</FlashDriverDll>
           <DeviceId>6834</DeviceId>
           <RegisterFile>MKL46Z4.H</RegisterFile>
-          <MemoryEnv/>
-          <Cmp/>
-          <Asm/>
-          <Linker/>
-          <OHString/>
-          <InfinionOptionDll/>
-          <SLE66CMisc/>
-          <SLE66AMisc/>
-          <SLE66LinkerMisc/>
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>SFD\Freescale\Kinetis\MKL46Z4.sfr</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath/>
-          <IncludePath/>
-          <LibPath/>
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
           <RegisterFilePath>Freescale\Kinetis\</RegisterFilePath>
           <DBRegisterFilePath>Freescale\Kinetis\</DBRegisterFilePath>
           <TargetStatus>
@@ -55,8 +62,8 @@
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -65,8 +72,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -75,13 +82,15 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>1</SelectedForBatchBuild>
-          <SVCSIdString/>
+          <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -95,17 +104,17 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument/>
-          <IncludeLibraryModules/>
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments/>
+          <SimDllArguments></SimDllArguments>
           <SimDlgDll>DARMCM1.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM0+</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments/>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM0+</TargetDlgDllArguments>
         </DllOption>
@@ -117,48 +126,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
-            <UsePdscDebugDescription>1</UsePdscDebugDescription>
-          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>14</TargetSelection>
-          <SimDlls>
-            <CpuDll/>
-            <CpuDllArguments/>
-            <PeripheralDll/>
-            <PeripheralDllArguments/>
-            <InitializationFile/>
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll/>
-            <CpuDllArguments/>
-            <PeripheralDll/>
-            <PeripheralDllArguments/>
-            <InitializationFile/>
-            <Driver>PEMicro\Pemicro_ArmCortexInterface.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -172,10 +139,10 @@
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3>"" ()</Flash3>
-          <Flash4/>
-          <pFcarmOut/>
-          <pFcarmGrp/>
-          <pFcArmRoot/>
+          <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -208,21 +175,23 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M0+"</AdsCpuType>
-            <RvctDeviceName/>
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
-            <hadIROM>1</hadIROM>
-            <hadIRAM>1</hadIRAM>
+            <hadIROM>0</hadIROM>
+            <hadIRAM>0</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
-            <hadIRAM2>1</hadIRAM2>
+            <RvdsMve>0</RvdsMve>
+            <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -339,7 +308,7 @@
                 <Size>0x6000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector/>
+            <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
             <interw>0</interw>
@@ -356,7 +325,15 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
+            <v6Lang>1</v6Lang>
+            <v6LangP>1</v6LangP>
+            <vShortEn>1</vShortEn>
+            <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--library_interface=armcc 
 --library_type=standardlib 
@@ -364,7 +341,7 @@
  
 </MiscControls>
               <Define>DEBUG, CPU_MKL46Z256VLL4, FRDM_KL46Z, FREEDOM, PRINTF_FLOAT_ENABLE=0, SCANF_FLOAT_ENABLE=0, PRINTF_ADVANCED_ENABLE=0, SCANF_ADVANCED_ENABLE=0</Define>
-              <Undefine/>
+              <Undefine></Undefine>
               <IncludePath>../../..;..</IncludePath>
             </VariousControls>
           </Cads>
@@ -378,11 +355,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
-              <MiscControls/>
+              <MiscControls></MiscControls>
               <Define>DEBUG</Define>
-              <Undefine/>
-              <IncludePath/>
+              <Undefine></Undefine>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -394,11 +372,12 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase/>
+            <pXoBase></pXoBase>
             <ScatterFile>MKL46Z256xxx4_flash.scf</ScatterFile>
-            <IncludeLibs/>
-            <IncludeLibsPath/>
-            <LinkerInputFile/>
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings>6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
@@ -424,37 +403,47 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>::Board Support</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+        </Group>
       </Groups>
     </Target>
     <Target>
       <TargetName>hello_world release</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>MKL46Z256VLL4</Device>
           <Vendor>NXP</Vendor>
           <Cpu>CPUTYPE("Cortex-M0+")</Cpu>
-          <FlashUtilSpec/>
+          <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"STARTUP\Freescale\Kinetis\startup_MKL46Z4.s" ("Freescale MKL46Zxxxxxx4 Startup Code")</StartupFile>
           <FlashDriverDll>UL2CM3(-O2510 -S0 -C0 -FO15 -FD20000000 -FC800 -FN1 -FF0MK_P256_48MHZ -FS00 -FL040000)</FlashDriverDll>
           <DeviceId>6834</DeviceId>
           <RegisterFile>MKL46Z4.H</RegisterFile>
-          <MemoryEnv/>
-          <Cmp/>
-          <Asm/>
-          <Linker/>
-          <OHString/>
-          <InfinionOptionDll/>
-          <SLE66CMisc/>
-          <SLE66AMisc/>
-          <SLE66LinkerMisc/>
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>SFD\Freescale\Kinetis\MKL46Z4.sfr</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath/>
-          <IncludePath/>
-          <LibPath/>
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
           <RegisterFilePath>Freescale\Kinetis\</RegisterFilePath>
           <DBRegisterFilePath>Freescale\Kinetis\</DBRegisterFilePath>
           <TargetStatus>
@@ -478,8 +467,8 @@
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -488,8 +477,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -498,13 +487,15 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name/>
-            <UserProg2Name/>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>1</SelectedForBatchBuild>
-          <SVCSIdString/>
+          <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -518,17 +509,17 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument/>
-          <IncludeLibraryModules/>
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments/>
+          <SimDllArguments></SimDllArguments>
           <SimDlgDll>DARMCM1.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM0+</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments/>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM0+</TargetDlgDllArguments>
         </DllOption>
@@ -540,48 +531,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
-            <UsePdscDebugDescription>1</UsePdscDebugDescription>
-          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>14</TargetSelection>
-          <SimDlls>
-            <CpuDll/>
-            <CpuDllArguments/>
-            <PeripheralDll/>
-            <PeripheralDllArguments/>
-            <InitializationFile/>
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll/>
-            <CpuDllArguments/>
-            <PeripheralDll/>
-            <PeripheralDllArguments/>
-            <InitializationFile/>
-            <Driver>PEMicro\Pemicro_ArmCortexInterface.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -595,10 +544,10 @@
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3>"" ()</Flash3>
-          <Flash4/>
-          <pFcarmOut/>
-          <pFcarmGrp/>
-          <pFcArmRoot/>
+          <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -631,21 +580,23 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M0+"</AdsCpuType>
-            <RvctDeviceName/>
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
-            <hadIROM>1</hadIROM>
-            <hadIRAM>1</hadIRAM>
+            <hadIROM>0</hadIROM>
+            <hadIRAM>0</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
-            <hadIRAM2>1</hadIRAM2>
+            <RvdsMve>0</RvdsMve>
+            <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -762,7 +713,7 @@
                 <Size>0x6000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector/>
+            <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
             <interw>0</interw>
@@ -779,7 +730,15 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
+            <v6Lang>1</v6Lang>
+            <v6LangP>1</v6LangP>
+            <vShortEn>1</vShortEn>
+            <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--library_interface=armcc 
 --library_type=standardlib 
@@ -787,7 +746,7 @@
  
 </MiscControls>
               <Define>NDEBUG, CPU_MKL46Z256VLL4, FRDM_KL46Z, FREEDOM, PRINTF_FLOAT_ENABLE=0, SCANF_FLOAT_ENABLE=0, PRINTF_ADVANCED_ENABLE=0, SCANF_ADVANCED_ENABLE=0</Define>
-              <Undefine/>
+              <Undefine></Undefine>
               <IncludePath>../../..;..</IncludePath>
             </VariousControls>
           </Cads>
@@ -801,11 +760,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
-              <MiscControls/>
+              <MiscControls></MiscControls>
               <Define>NDEBUG</Define>
-              <Undefine/>
-              <IncludePath/>
+              <Undefine></Undefine>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -817,11 +777,12 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase/>
+            <pXoBase></pXoBase>
             <ScatterFile>MKL46Z256xxx4_flash.scf</ScatterFile>
-            <IncludeLibs/>
-            <IncludeLibsPath/>
-            <LinkerInputFile/>
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings>6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
@@ -847,168 +808,261 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>::Board Support</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
+        </Group>
       </Groups>
     </Target>
   </Targets>
+
   <RTE>
+    <apis/>
     <components>
-      <component Cvendor="NXP" Cversion="1.0.0" Cgroup="Startup" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.0.1">
+        <package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.0.1"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.1.0" Csub="clock" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0">
+        <package name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="1.0.0" Cgroup="Startup" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="clock" Cvendor="NXP" Cversion="2.1.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.0.2" Csub="port" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="common" Cvendor="NXP" Cversion="2.0.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="1.0.0" Csub="debug_console" Cgroup="SDK Utilities" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="flash" Cvendor="NXP" Cversion="3.0.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="1.0.0" Csub="assert" Cgroup="SDK Utilities" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="gpio" Cvendor="NXP" Cversion="2.2.1">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="ARM" Cgroup="CORE" Cclass="CMSIS" Cversion="5.0.1">
-        <package url="http://www.keil.com/pack/" version="5.0.1" vendor="ARM" name="CMSIS"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="i2c" Cvendor="NXP" Cversion="2.0.5">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.1.5" Csub="uart" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="lpsci" Cvendor="NXP" Cversion="2.0.4">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.0.3" Csub="smc" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="port" Cvendor="NXP" Cversion="2.0.2">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.0.0" Csub="common" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="smc" Cvendor="NXP" Cversion="2.0.3">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.0.5" Csub="i2c" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="uart" Cvendor="NXP" Cversion="2.1.5">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
+      <component Cclass="Device" Cgroup="SDK Utilities" Csub="assert" Cvendor="NXP" Cversion="1.0.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="3.0.0" Csub="flash" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="SDK Utilities" Csub="debug_console" Cvendor="NXP" Cversion="1.0.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
-      <component Cvendor="NXP" Cversion="2.2.1" Csub="gpio" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </component>
-      <component Cvendor="NXP" Cversion="2.0.4" Csub="lpsci" Cgroup="SDK Drivers" Cclass="Device">
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" schemaVersion="1.4" version="10.0.3" vendor="NXP" name="MKL46Z4_DFP"/>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0">
+        <package name="MKL46Z4_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
         </targetInfos>
       </component>
     </components>
-    <apis/>
     <files>
-      <file attr="config" category="header" name="project_template/board.h">
-        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\board.h</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="sourceC" name="project_template/clock_config.c">
-        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\clock_config.c</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="header" name="project_template/pin_mux.h">
-        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\pin_mux.h</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="sourceC" name="project_template/pin_mux.c">
-        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\pin_mux.c</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="header" name="project_template/clock_config.h">
-        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\clock_config.h</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
-        <targetInfos>
-          <targetInfo name="hello_world debug"/>
-          <targetInfo name="hello_world release"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="sourceC" name="project_template/board.c">
+      <file attr="config" category="sourceC" name="project_template\board.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MKL46Z256VLL4\board.c</instance>
-        <component Cvariant="frdmkl46z" Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cversion="1.0.0"/>
-        <package url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" version="10.0.3" vendor="NXP" name="FRDM-KL46Z_BSP"/>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="project_template\board.h" version="1.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\board.h</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="project_template\clock_config.c" version="1.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\clock_config.c</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="project_template\clock_config.h" version="1.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\clock_config.h</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="project_template\peripherals.c" version="0.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\peripherals.c</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="project_template\peripherals.h" version="0.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\peripherals.h</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="project_template\pin_mux.c" version="1.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\pin_mux.c</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="project_template\pin_mux.h" version="1.0.0">
+        <instance index="0">RTE\Board_Support\MKL46Z256VLL4\pin_mux.h</instance>
+        <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="frdmkl46z" Cvendor="NXP" Cversion="1.0.0" condition="project_template.frdmkl46z"/>
+        <package license="Licenses.txt" name="FRDM-KL46Z_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_flash.scf" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z256xxx4_flash.scf</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="linkerScript" condition="devices.MKL46Z256xxx4_mdk" name="arm\MKL46Z256xxx4_ram.scf" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z256xxx4_ram.scf</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MKL46Z4.h" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z4.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="MKL46Z4_features.h" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\MKL46Z4_features.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="fsl_device_registers.h" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\fsl_device_registers.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceAsm" condition="mdk" name="arm\startup_MKL46Z4.s" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\startup_MKL46Z4.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="system_MKL46Z4.c" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\system_MKL46Z4.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
+        <targetInfos>
+          <targetInfo name="hello_world debug"/>
+          <targetInfo name="hello_world release"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="system_MKL46Z4.h" version="0.0.0">
+        <instance index="0">RTE\Device\MKL46Z256VLL4\system_MKL46Z4.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="devices.MKL46Z4_platform.Include_core_cm0plus"/>
+        <package license="Licenses.txt" name="MKL46Z4_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="10.0.3"/>
         <targetInfos>
           <targetInfo name="hello_world debug"/>
           <targetInfo name="hello_world release"/>
@@ -1016,4 +1070,5 @@
       </file>
     </files>
   </RTE>
+
 </Project>

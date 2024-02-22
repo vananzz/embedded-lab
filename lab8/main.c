@@ -5,7 +5,7 @@
 
 void my_mag_calib(int* xoff, int* yoff, int* zoff);
 
-int main() {
+int main() {		
 	SystemClockConfiguration();
   SegLCD_Init();
 	//InitI2C();
@@ -13,24 +13,26 @@ int main() {
 	//init_I2C0();
 	//init_MAG3110();
 
-	int *x_off, *y_off, * z_off;
-	//SegLCD_DisplayDecimal(9999);
-	//for (int i = 0; i < 3000000; i ++);
-	//my_mag_calib(x_off, y_off, z_off);
-	//SegLCD_DisplayDecimal(0000);
-	//for (int i = 0; i < 3000000; i ++);
+	int x_off, y_off, z_off;
+	SegLCD_DisplayDecimal(88.21);
+	for (int i = 0; i < 3000000; i ++);
+	//my_mag_calib(&x_off, &y_off, &z_off);
+	SegLCD_DisplayDecimal(0000);
+	for (int i = 0; i < 3000000; i ++);
 	int x, y, z;
 	while (1) {
-		x = mag_read(0x01);
-		//x |= mag_read(0x02);
+		x = mag_read(0x01)<<8;
+		x |= mag_read(0x02);
 		
-		y = mag_read(0x03);
-		//y |= mag_read(0x04);
+		y = mag_read(0x03)<<8;
+		y |= mag_read(0x04);
 
-		z = mag_read(0x05);
-		//z |= mag_read(0x6);
-		//SegLCD_DisplayDecimal(sqrt(x*x+y*y+z*z));
-		SegLCD_DisplayDecimal(x); 
+		z = mag_read(0x05)<<8;
+		z |= mag_read(0x6);
+		//SegLCD_DisplayDecimal((int)(sqrt(x*x+y*y+z*z) / 65536 / sqrt(2) * 9999));
+		SegLCD_DisplayDecimal((int)(sqrt(x*x+y*y+z*z) / 113509 * 9999));
+		for (int i = 0; i < 3000000; i ++);
+		//SegLCD_DisplayDecimal(x); 
 	}
 
 	return 1;
@@ -99,9 +101,9 @@ void my_mag_calib(int* xoff, int* yoff, int* zoff){
 	SegLCD_DisplayDecimal(Xout_16_bit_avg);
 	for (int i = 0; i < 3000000; i ++){};
 
-	//*xoff = Xout_16_bit_avg;
-	//*yoff = Yout_16_bit_avg;
-	//*zoff = Zout_16_bit_avg;
+	*xoff = Xout_16_bit_avg;
+	*yoff = Yout_16_bit_avg;
+	*zoff = Zout_16_bit_avg;
 	
 	SegLCD_DisplayDecimal(5000);
 	for (int i = 0; i < 3000000; i ++);
