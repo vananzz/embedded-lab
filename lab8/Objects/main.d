@@ -9,3 +9,4 @@
 .\objects\main.o: Seg_LCD.h
 .\objects\main.o: I2C.h
 .\objects\main.o: mag.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
