@@ -37,7 +37,7 @@ void mma_init(void)
 		InitI2C();      //Initialize I2C modules done in read/write functions itself
 		
     mma_set(MMA_CTRL_REG1,0x00); //Standby mode
-    mma_set(MMA_CTRL_REG2,0x40); //Auto reset
+//    mma_set(MMA_CTRL_REG2,0x40); //Auto reset
     mma_set(MMA_CTRL_REG1,0x01); //Active
 }
 

@@ -4,8 +4,6 @@
 #include "mma.h"
 #include "math.h"
 
-void my_mag_calib(int* xoff, int* yoff, int* zoff);
-
 int main() {		
 	SystemClockConfiguration();
   SegLCD_Init();
@@ -17,25 +15,24 @@ int main() {
 	int x_off, y_off, z_off;
 	for (int i = 0; i < 3000000; i ++);
 	//my_mag_calib(&x_off, &y_off, &z_off);
-	SegLCD_DisplayDecimal(0000);
+	SegLCD_DisplayDecimal(1111);
 	for (int i = 0; i < 3000000; i ++);
-	int x, y, z;
+	int x = 0, y = 0, z = 0;
 
 	while (1) {
-		
-		if((mma_read(0x00)&0xf) != 0) {
-			x = mma_read(0x01)<<8;
-			x |= mma_read(0x02);
+		if((mma_read(STATUS_REG)&0xf) == 0xf) {
+			for (int i = 0; i < 1000000; i ++);
+			x = mma_read(OUT_X_MSB)<<6;
+			x |= mma_read(OUT_X_LSB)>>2;
 
-			y = mma_read(0x03)<<8;
-			y |= mma_read(0x04);
+			y = mma_read(OUT_Y_MSB)<<6;
+			y |= mma_read(OUT_Y_LSB)>>2;
 
-			z = mma_read(0x05)<<8;
-			z |= mma_read(0x6);
+			z = mma_read(OUT_Z_MSB)<<6;
+			z |= mma_read(OUT_Z_LSB)>>2;
 		}
-			SegLCD_DisplayDecimal((sqrt(pow(x/100.0, 2)+pow(y/ 100.0, 2)+pow(z / 100.0, 2))));
-			for (int i = 0; i < 3000000; i ++);
-			//SegLCD_DisplayDecimal(x);  
+		SegLCD_DisplayDecimal((sqrt(pow(x/100.0, 2)+pow(y/ 100.0, 2)+pow(z / 100.0, 2))));
+		for (int i = 0; i < 3000000; i ++);
 	}
 
 	return 1;
