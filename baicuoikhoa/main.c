@@ -7,16 +7,9 @@
 int main() {		
 	SystemClockConfiguration();
   SegLCD_Init();
-	//InitI2C();
 	mma_init();
-	//init_I2C0();
-	//init_MAG3110();
 
 	int x_off, y_off, z_off;
-	for (int i = 0; i < 3000000; i ++);
-	//my_mag_calib(&x_off, &y_off, &z_off);
-	SegLCD_DisplayDecimal(1111);
-	for (int i = 0; i < 3000000; i ++);
 	int x = 0, y = 0, z = 0;
 
 	while (1) {
