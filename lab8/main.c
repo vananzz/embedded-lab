@@ -4,7 +4,57 @@
 #include "mag.h"
 #include "math.h"
 
+#define IDLE 1
+#define COUNTING 2
+
+
 void my_mag_calib(int* xoff, int* yoff, int* zoff);
+
+int state = IDLE;
+
+void initGreenLed();
+
+void initRedLed();
+
+void initSwitch1();
+
+void initSwitch3();
+
+uint32_t SysTick_Configuration (uint32_t ticks){
+	SysTick->LOAD  = ticks -1;                                  /* set reload register */
+	NVIC_SetPriority(SysTick_IRQn, (1<<4) -1);  /* set Priority for SystickInterrupt */
+	SysTick->VAL   = 0;                                          /* Load theSysTickCounter Value */
+	SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk|
+	SysTick_CTRL_TICKINT_Msk |
+	SysTick_CTRL_ENABLE_Msk;                 /* Enable SysTickIRQ and SysTickTimer */
+	return (0);                                                  /* Function successful */
+}
+
+void init_SysTick_interrupt(){
+	SysTick->LOAD = SystemCoreClock/ 1000; //configured the SysTickto count in 1ms
+	/* Select Core Clock & Enable SysTick& Enable Interrupt */
+	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk|SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk;
+}
+
+int32_t volatile msTicks = 0; // Interval counter in ms
+int32_t volatile msTicksInDelay = 0;
+
+unsigned long long tinhthoigian = 0;	//	Increasing second
+long long SysTick_Handler(void) { // SysTickinterrupt Handler
+	msTicks++; // Increment counter 
+	msTicksInDelay++;
+	if(msTicks == 1000){
+		tinhthoigian++;
+		msTicks = 0;
+	}
+	return tinhthoigian;
+}
+void Delay (uint32_t TICK) { 
+	msTicksInDelay = 0;
+	while (msTicksInDelay < TICK); // Wait TICK ms 
+	msTicksInDelay = 0; // Reset counter 
+}
+
 
 int main() {		
 	SystemClockConfiguration();
@@ -39,6 +89,7 @@ int main() {
 
 	return 1;
 }
+
 
 void my_mag_calib(int* xoff, int* yoff, int* zoff){
 	short Xout_16_bit_avg, Yout_16_bit_avg, Zout_16_bit_avg;  
@@ -129,4 +180,28 @@ void my_mag_calib(int* xoff, int* yoff, int* zoff){
 	mag_set(OFF_Z_MSB, (char)((Zout_16_bit_avg >>8) & 0xFF));  
 	  
 	mag_set(MAG_CTRL_REG1, 0x01);  //  Active mode again  *****
+}
+
+void initGreenLed() {
+	SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK;
+	PORTD->PCR[5] |= (1ul<<8);
+	PTD->PDDR |= (1ul << 5);
+}
+
+void initRedLed() {
+	SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
+	PORTE->PCR[29] |= (1ul<<8);
+	PTE->PDDR |= (1ul << 29);
+}
+
+void initSwitch1() {
+	SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
+	PORTC->PCR[3] = PORT_PCR_MUX(1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
+	PTC->PDDR &= ~((uint32_t)(1u<<3));
+}
+
+void initSwitch3() {
+	SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
+	PORTC->PCR[12] = PORT_PCR_MUX(1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
+	PTC->PDDR &= ~((uint32_t)(1u<<12));
 }

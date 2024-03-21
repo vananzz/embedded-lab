@@ -54,4 +54,4 @@ void init() {
 	SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
 	PORTC->PCR[12] = PORT_PCR_MUX(1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
 	PTC->PDDR &= ~((uint32_t)(1u<<12));
-}
+}	
