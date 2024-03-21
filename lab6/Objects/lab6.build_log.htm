@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.26.2.0
 Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: An Ngo, --, LIC=----
+License Information: Ngo An, An, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.26.2.0
@@ -37,7 +37,7 @@ main.c(19): warning:  #188-D: enumerated type mixed with another type
   	NVIC_ClearPendingIRQ(30);
 main.c(20): warning:  #188-D: enumerated type mixed with another type
   	NVIC_EnableIRQ(30);
-main.c(63): warning:  #111-D: statement is unreachable
+main.c(65): warning:  #111-D: statement is unreachable
   	return 0;
 main.c: 5 warnings, 0 errors
 compiling system_MKL46Z4.c...
@@ -45,7 +45,7 @@ linking...
 .\Objects\lab6.axf: Warning: L6914W: option ro-base ignored when using --scatter.
 .\Objects\lab6.axf: Warning: L6914W: option rw-base ignored when using --scatter.
 .\Objects\lab6.axf: Warning: L6340W: options first and last are ignored for link type of scattered
-Program Size: Code=528 RO-data=208 RW-data=0 ZI-data=2048  
+Program Size: Code=720 RO-data=208 RW-data=0 ZI-data=2048  
 Finished: 0 information, 3 warning and 0 error messages.
 ".\Objects\lab6.axf" - 0 Error(s), 8 Warning(s).
 
@@ -73,12 +73,12 @@ Package Vendor: NXP
    * Component: ARM::CMSIS:CORE:5.1.2
 
    * Component: NXP::Device:Startup:1.0.0
+      Include file:  MKL46Z4_features.h
       Source file:   arm\startup_MKL46Z4.s
       Include file:  MKL46Z4.h
-      Include file:  MKL46Z4_features.h
       Include file:  fsl_device_registers.h
-      Source file:   system_MKL46Z4.c
       Include file:  system_MKL46Z4.h
+      Source file:   system_MKL46Z4.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

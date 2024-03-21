@@ -21,7 +21,6 @@ void initSw3() {
 }
 
 void initGreenLed() {
-	// led xanh
 	SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK;
 	PORTD->PCR[5] |= (1ul<<8);
 	PTD->PDDR |= (1ul << 5);
@@ -38,7 +37,6 @@ void toggleGreenLed() {
 	PTD->PTOR |= 1ul<<5;
 }
 
-
 void toggleRedLed() {
 	PTE->PTOR |= 1ul<<29;
 }
@@ -51,14 +49,18 @@ void PORTC_PORTD_IRQHandler(void) {
 	uint32_t i = 0;
 	for(i = 0; i < 1000; i++);
 	if ((PTC->PDIR & (1<<3)) == 0) toggleRedLed();
+	if ((PTC->PDIR & (1<<12)) == 0) toggleGreenLed();
 	PORTC->PCR[3] |= PORT_PCR_ISF_MASK;
+	PORTC->PCR[12] |= PORT_PCR_ISF_MASK;
 	/* Clear interrupt service flag in port control register otherwise int.
 	remains active */
 }
 
 int main() {
 	initSw1();
+	initSw3();
 	initRedLed();
+	initGreenLed();
 	while (1) {};
 	return 0;
 }
