@@ -20,6 +20,10 @@
 #define OUT_Z_LSB	0x06
 #define WHO_AM_I	0x07
 
+#define OFF_X 	0x2F
+#define OFF_Y 	0x30
+#define OFF_Z 	0x31
+
 static void pause(void);
 void mma_set(uint8_t addr, uint8_t data);
 void mma_init(void);
